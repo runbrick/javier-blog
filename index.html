@@ -9,7 +9,7 @@
   <meta name="description" content="分享学习和经验的博客">
 <meta property="og:type" content="website">
 <meta property="og:title" content="哈维尔的码农笔记">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="https://javier-blog.vercel.app/index.html">
 <meta property="og:site_name" content="哈维尔的码农笔记">
 <meta property="og:description" content="分享学习和经验的博客">
 <meta property="og:locale" content="zh_CN">
@@ -67,7 +67,7 @@
         <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://javier-blog.vercel.app"></form>
       </div>
     </div>
   </div>
@@ -111,6 +111,7 @@
 <li>创建一个 **Git **仓库</li>
 <li>注册一个 **vercel **账号(如果有自己的服务器或者不适用 vercel 可以不用管这一步)：<a target="_blank" rel="noopener" href="https://vercel.com/">https://vercel.com/</a></li>
 <li>准备一个域名(如果不需要独立域名可以略过这一步)</li>
+<li>hexo 本地图片部署</li>
 </ol>
 <h3 id="正式开始"><a href="#正式开始" class="headerlink" title="正式开始"></a><strong>正式开始</strong></h3><h6 id="安装-Hexo-工具"><a href="#安装-Hexo-工具" class="headerlink" title="安装 Hexo 工具"></a><strong>安装 Hexo 工具</strong></h6><p>上面的 **GIT **和 **Node **在百度或者谷歌上已经有很多相关专业的教程，这里就不详细讲解这块的知识了。一般来说到官网上下载完毕直接下一步下一步即可。我们先来全局安装一个 **Hexo **工具</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
@@ -120,6 +121,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">INFO  Validating config</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000/ . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
 <p><img src="/images/aPtEJvCMY6RhBe0rC1t39vkeJIn6D2QHBAmIp_kJYp4.png" alt="image"></p>
 <p>以上就正式搭建完成 hexo 的博客程序了。</p>
+<h6 id="修改博客的基本信息"><a href="#修改博客的基本信息" class="headerlink" title="修改博客的基本信息"></a><strong>修改博客的基本信息</strong></h6><p>修改 博客的标题，副标题，描述，语言时区等信息</p>
+<p><img src="/images/-2ypI5XGgYYyJxPI9HfQaRiB5qc3wmiuZxPUp1iJ2Lg.png" alt="image"></p>
+<p>修改博客地址</p>
+<p><img src="/images/7CmJWWbIptdmCA1TQowBT-vu4PBMiPStDn6SOCgjoko.png" alt="image"></p>
 <h6 id="创建-github-仓库"><a href="#创建-github-仓库" class="headerlink" title="创建 github 仓库"></a><strong>创建 github 仓库</strong></h6><p>打开 <a target="_blank" rel="noopener" href="https://github.com/">https://github.com/</a> 创建一个仓库用来存储我们的部署程序,创建后是这个样子的。</p>
 <p><img src="/images/vN_ncAhfigfP-OmyjElWRqUxAMsotxRElbIHkQpXviI.png" alt="image"></p>
 <p><img src="/images/OeDvMHdwNTjhvTDvzMNbupaka8xJWzRlBYYg9sCg_UQ.png" alt="image"></p>
@@ -129,7 +134,7 @@
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">npm</span> <span class="string">install</span> <span class="string">hexo-deployer-git</span> <span class="string">--save</span></span><br></pre></td></tr></table></figure>
 <p>安装之后在项目目录中找到 <code>_config.yml</code>  修改 **deploy **参数</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;git&#x27;</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&#x27;https://github.com/runbrick/javier-blog.git&#x27;</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">&#x27;master&#x27;</span></span><br></pre></td></tr></table></figure>
-<p>执行 <code>hexo d</code> 将静态页面部署到 **github **上，是这个样子的。</p>
+<p>执行 <code>hexo g</code>  然后执行 <code>hexo d</code> 将静态页面部署到 **github **上，是这个样子的。</p>
 <p><img src="/images/IOcwTUiphjTqmWR1El8GuUpiJZt88ZpACMDzbcDsuEk.png" alt="image"></p>
 <h6 id="将项目部署到-vercel-上"><a href="#将项目部署到-vercel-上" class="headerlink" title="将项目部署到 vercel 上"></a><strong>将项目部署到 vercel 上</strong></h6><p>如果不需要部署到 vercel 上此步可以略过</p>
 <p>在 **dashboard **上 选择 **Create a New Project **</p>
@@ -146,10 +151,16 @@
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">checkout</span> <span class="string">-b</span> <span class="string">source</span></span><br></pre></td></tr></table></figure>
 <p>提交代码</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">add</span> <span class="string">.</span></span><br><span class="line"><span class="string">git</span> <span class="string">commit</span> <span class="string">-m</span> <span class="string">&quot;first commit&quot;</span></span><br><span class="line"><span class="string">git</span> <span class="string">push</span> <span class="string">origin</span> <span class="string">source</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+<h6 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a><strong>常用命令</strong></h6><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">hexo</span> <span class="string">new</span> <span class="string">&quot;name&quot;</span>       <span class="comment"># 新建文章</span></span><br><span class="line"><span class="string">hexo</span> <span class="string">new</span> <span class="string">page</span> <span class="string">&quot;name&quot;</span>  <span class="comment"># 新建页面</span></span><br><span class="line"><span class="string">hexo</span> <span class="string">g</span>                <span class="comment"># 生成页面</span></span><br><span class="line"><span class="string">hexo</span> <span class="string">d</span>                <span class="comment"># 部署</span></span><br><span class="line"><span class="string">hexo</span> <span class="string">g</span> <span class="string">-d</span>             <span class="comment"># 生成页面并部署</span></span><br><span class="line"><span class="string">hexo</span> <span class="string">s</span>                <span class="comment"># 本地预览</span></span><br><span class="line"><span class="string">hexo</span> <span class="string">clean</span>            <span class="comment"># 清除缓存和已生成的静态文件</span></span><br><span class="line"><span class="string">hexo</span> <span class="string">help</span>             <span class="comment"># 帮助</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/05/03/%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAHexo%E5%8D%9A%E5%AE%A2%E5%B9%B6%E7%94%A8vercel%E9%83%A8%E7%BD%B2/" data-id="clh7rhvcf0000uci3hgfu2h74" data-title="搭建一个Hexo博客并用vercel部署" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://javier-blog.vercel.app/2023/05/03/%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAHexo%E5%8D%9A%E5%AE%A2%E5%B9%B6%E7%94%A8vercel%E9%83%A8%E7%BD%B2/" data-id="clh7rhvcf0000uci3hgfu2h74" data-title="搭建一个Hexo博客并用vercel部署" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -202,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/05/01/hello-world/" data-id="clh4j925h0000vci3drx33n7w" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://javier-blog.vercel.app/2023/05/01/hello-world/" data-id="clh4j925h0000vci3drx33n7w" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
