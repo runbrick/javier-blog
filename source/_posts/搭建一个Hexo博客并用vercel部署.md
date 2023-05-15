@@ -1,6 +1,9 @@
 ---
 title: 搭建一个Hexo博客并用vercel部署
-tags: java,技术,学习笔记
+tags: 
+  - java
+  - 技术
+  - 学习笔记
 category: java
 date: 2023-05-03 21:55:56
 ---

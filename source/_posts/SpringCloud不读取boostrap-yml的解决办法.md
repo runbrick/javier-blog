@@ -1,6 +1,10 @@
 ---
 title: SpringCloud不读取boostrap.yml的解决办法
-tags: 技术,学习笔记,Java,springboot
+tags: 
+  - 技术
+  - 学习笔记
+  - Java
+  - springboot
 category: java
 date: 2023-05-15 13:32:47
 ---
