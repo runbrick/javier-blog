@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 哈维尔的码农笔记
+title: '砖头的码农笔记'
 subtitle: ''
 description: '分享学习和经验的博客'
 keywords: '博客,码农笔记,java,技术'
-author: Javier
+author: WayneZhou
 language: zh-CN
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://javier-blog.vercel.app/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
